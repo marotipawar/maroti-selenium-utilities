@@ -16,7 +16,7 @@ public interface PropertiesFile {
 
     public static Properties load(String fileName) throws URISyntaxException, IOException {
 
-        String path = System.getProperty("user.dir")+"/src/main/resources/"+fileName;
+        String path = System.getProperty("user.dir")+"\\src\\main\\resources\\"+fileName;
         URL urlPth = PropertiesFile.class.getClassLoader().getResource(fileName);
         File file = null;
         if (path != null) {

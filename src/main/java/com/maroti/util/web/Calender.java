@@ -9,7 +9,7 @@ public interface Calender {
        while(true) {
            if (monthElement.getText().contains(month + " " + year)) {
                for (WebElement dayWb : days) {
-                   System.out.println("Days :" + dayWb.getText());
+
                    if (dayWb.getText().contains(day)) {
                        dayWb.click();
                        break;

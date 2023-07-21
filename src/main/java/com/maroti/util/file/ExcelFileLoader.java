@@ -11,7 +11,7 @@ public interface ExcelFileLoader {
     public FileInputStream get(String fileName);
 
     public static FileInputStream load(String fileName){
-      String pathUrl = System.getProperty("user.dir")+"/src/test/resources/"+fileName;
+      String pathUrl = System.getProperty("user.dir")+"\\src\\test\\resources\\"+fileName;
         //  URL pathUrl = ExcelFile.class.getClassLoader().getResource(fileName);
         File file = null;
         if (pathUrl != null) {

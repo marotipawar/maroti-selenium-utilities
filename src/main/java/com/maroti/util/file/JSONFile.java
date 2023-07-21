@@ -19,7 +19,7 @@ public interface JSONFile<T> {
 
 
     public static File load(String fileName) {
-        String urlPath = System.getProperty("user.dir")+"/src/test/resources/"+fileName;
+        String urlPath = System.getProperty("user.dir")+"\\src\\test\\resources/"+fileName;
         //URL urlPath = JSONFile.class.getClassLoader().getResource(fileName);
         File file = null;
         if (urlPath != null) {
