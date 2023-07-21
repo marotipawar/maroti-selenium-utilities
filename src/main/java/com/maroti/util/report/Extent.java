@@ -31,7 +31,7 @@ public interface Extent {
 
     public static File store(String fileName) throws IOException {
 
-        String path = System.getProperty("user.dir") + "/app/build/";
+        String path = System.getProperty("user.dir") + "/target/";
         File file = new File(path + "/extentReport/");
         if (file.isDirectory()) {
             file.mkdir();

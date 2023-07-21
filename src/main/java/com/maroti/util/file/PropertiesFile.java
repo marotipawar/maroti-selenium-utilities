@@ -15,10 +15,12 @@ public interface PropertiesFile {
     Properties loadProps(String fileName);
 
     public static Properties load(String fileName) throws URISyntaxException, IOException {
+
+        String path = System.getProperty("user.dir")+"/src/main/resources/"+fileName;
         URL urlPth = PropertiesFile.class.getClassLoader().getResource(fileName);
         File file = null;
-        if (urlPth != null) {
-            file = new File(urlPth.toURI());
+        if (path != null) {
+            file = new File(path);
         }
         if (file != null && file.exists()) {
             FileInputStream stream = new FileInputStream(file);

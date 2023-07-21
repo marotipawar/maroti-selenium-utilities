@@ -31,7 +31,7 @@ public class App {
 
 
 
-/*
+
 
     @FindBy(xpath = "//div[@class='sc-12foipm-16 dwhdnN fswFld ']")
     private WebElement clickCity;
@@ -67,7 +67,7 @@ public class App {
         app.book();
     }
 
-*/
+
 
    /* @FindBy(xpath = "//div[@class='input-icons']/i")
     private WebElement clickDate;

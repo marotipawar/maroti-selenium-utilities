@@ -18,11 +18,12 @@ public interface JSONFile<T> {
     T read(String file);
 
 
-    public static File load(String fileName) throws URISyntaxException, IOException {
-        URL urlPath = JSONFile.class.getClassLoader().getResource(fileName);
+    public static File load(String fileName) {
+        String urlPath = System.getProperty("user.dir")+"/src/test/resources/"+fileName;
+        //URL urlPath = JSONFile.class.getClassLoader().getResource(fileName);
         File file = null;
         if (urlPath != null) {
-            file = new File(urlPath.toURI());
+            file = new File(urlPath);
         }
         if (file != null && file.exists()) {
             return file;
@@ -30,7 +31,7 @@ public interface JSONFile<T> {
         return null;
     }
 
-    public static Map toMap(String fileName) throws URISyntaxException, IOException {
+    public static Map toMap(String fileName) throws IOException {
         File file = load(fileName);
         if (file != null && file.exists()) {
             ObjectMapper mapper = new ObjectMapper();
@@ -41,7 +42,7 @@ public interface JSONFile<T> {
         return null;
     }
 
-    public static List<Map> toList(String fileName) throws URISyntaxException, IOException {
+    public static List<Map> toList(String fileName) throws IOException {
         File file = load(fileName);
         if (file != null && file.exists()) {
             ObjectMapper mapper = new ObjectMapper();

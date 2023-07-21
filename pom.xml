@@ -4,7 +4,7 @@
 
     <groupId>com.maroti</groupId>
     <artifactId>maroti-selenium-utilities</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
     <packaging>jar</packaging>
 
     <name>maroti-selenium-utilities</name>

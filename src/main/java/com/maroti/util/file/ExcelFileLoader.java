@@ -10,11 +10,12 @@ import java.net.URL;
 public interface ExcelFileLoader {
     public FileInputStream get(String fileName);
 
-    public static FileInputStream load(String fileName) throws URISyntaxException {
-        URL pathUrl = ExcelFile.class.getClassLoader().getResource(fileName);
+    public static FileInputStream load(String fileName){
+      String pathUrl = System.getProperty("user.dir")+"/src/test/resources/"+fileName;
+        //  URL pathUrl = ExcelFile.class.getClassLoader().getResource(fileName);
         File file = null;
         if (pathUrl != null) {
-            file = new File(pathUrl.toURI());
+            file = new File(pathUrl);
         }
         if (file != null && file.exists()) {
             try {
