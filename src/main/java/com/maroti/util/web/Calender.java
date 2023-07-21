@@ -5,23 +5,22 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public interface Calender {
-    public static void handle(List<WebElement> monthElement, List<WebElement> days, WebElement next, String year, String month, String day) throws InterruptedException {
-        for (WebElement months : monthElement) {
-            System.out.println(months.getText());
-            if (months.getText().equals(month + " " + year)) {
+    public static void handle(WebElement monthElement, List<WebElement> days, WebElement next, String year, String month, String day) throws InterruptedException {
+       while(true) {
+           if (monthElement.getText().contains(month + " " + year)) {
+               for (WebElement dayWb : days) {
+                   System.out.println("Days :" + dayWb.getText());
+                   if (dayWb.getText().contains(day)) {
+                       dayWb.click();
+                       break;
+                   }
 
-                Thread.sleep(2000);
-                for (WebElement dayWb : days) {
-                    System.out.println("Days :"+dayWb.getText());
-                    if (dayWb.getText().equals(day)) {
-                        dayWb.click();
-                        break;
-                    }
-                }
+               }
+               break;
 
-                break;
-            }
-            next.click();
+           }
+           next.click();
+
         }
     }
 }
