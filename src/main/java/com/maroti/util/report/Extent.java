@@ -5,8 +5,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.maroti.base.BaseClass;
-import com.maroti.base.WebDriverManager;
-import com.maroti.model.Report;
 import com.maroti.util.file.PropertiesFile;
 import com.maroti.util.web.Screenshot;
 import org.openqa.selenium.WebDriver;

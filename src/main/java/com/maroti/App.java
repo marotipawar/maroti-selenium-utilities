@@ -1,36 +1,24 @@
 package com.maroti;
 
 import com.maroti.base.BaseClass;
+import com.maroti.base.WebDriverManager;
 import com.maroti.util.web.Calender;
 import com.maroti.util.web.DropDown;
+import com.maroti.util.web.Element;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.time.Duration;
 import java.util.List;
 
-public class App {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+public class App extends BaseClass {
+    private WebDriver driver;
 
 
     @FindBy(xpath = "//div[@class='sc-12foipm-16 dwhdnN fswFld ']")
@@ -47,18 +35,20 @@ public class App {
     private WebElement next;
 
 
-
     public App() throws URISyntaxException, IOException {
-        PageFactory.initElements(BaseClass.initialize(), this);
+        this.driver= initialize();
+
+        PageFactory.initElements(driver, this);
     }
 
     public void book() throws InterruptedException {
-        clickCity.click();
-        enterCityName.sendKeys("Pune");
+        click(clickCity);
+        sendText(enterCityName, "Pune");
+
         DropDown.handle(selectCity, "Pune");
-        enterCityName.sendKeys("Mumbai");
+        sendText(enterCityName, "Mumbai");
         DropDown.handle(selectCity, "Mumbai");
-        Calender.handle(selectMonths, selectDay, next,"2024", "March", "25");
+        Calender.handle(selectMonths, selectDay, next, "2024", "March", "25");
     }
 
 
@@ -66,6 +56,8 @@ public class App {
         App app = new App();
         app.book();
     }
+
+
 
 
 
