@@ -57,22 +57,6 @@ public interface WebDriverManager {
             case "EDGEINCOGNITO" -> edgeIncognito(url, impTime, pageTime);
             default -> null;
         };
-
-       /* if (driver.equalsIgnoreCase("chrome")) {
-            return chrome(url);
-        } else if (driver.equalsIgnoreCase("firefox")) {
-            return firefox(url);
-        } else if (driver.equalsIgnoreCase("edge")) {
-            return edge(url);
-        } else if (driver.equalsIgnoreCase("chromeHeadless")) {
-            return chromeHeadless(url);
-        } else if (driver.equalsIgnoreCase("firefoxHeadless")) {
-            return firefoxHeadless(url);
-        } else if (driver.equalsIgnoreCase("edgeHeadless")) {
-            return edgeHeadless(url);
-        } else {
-            return null;
-        }*/
     }
 
 
