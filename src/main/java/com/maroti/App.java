@@ -1,20 +1,18 @@
 package com.maroti;
 
 import com.maroti.base.BaseClass;
-import com.maroti.base.WebDriverManager;
+
 import com.maroti.util.web.Calender;
 import com.maroti.util.web.DropDown;
-import com.maroti.util.web.Element;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.time.Duration;
 import java.util.List;
 
 public class App extends BaseClass {
@@ -37,10 +35,12 @@ public class App extends BaseClass {
 
     public App() throws URISyntaxException, IOException {
         this.driver= initialize();
-
         PageFactory.initElements(driver, this);
     }
 
+    public WebDriver driver(){
+        return driver;
+    }
     public void book() throws InterruptedException {
         click(clickCity);
         sendText(enterCityName, "Pune");
@@ -52,10 +52,10 @@ public class App extends BaseClass {
     }
 
 
-    public static void main(String[] args) throws InterruptedException, URISyntaxException, IOException {
+   /* public static void main(String[] args) throws InterruptedException, URISyntaxException, IOException {
         App app = new App();
         app.book();
-    }
+    }*/
 
 
 

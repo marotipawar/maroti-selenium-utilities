@@ -117,7 +117,7 @@ public interface Extent {
     }
 
 
-    public static void main(String[] args) throws IOException, URISyntaxException {
+   /* public static void main(String[] args) throws IOException, URISyntaxException {
 
         WebDriver driver = BaseClass.initialize();
 
@@ -131,6 +131,6 @@ public interface Extent {
         System.out.println(Screenshot.forReports(driver, Status.PASS,"test"));
         System.out.println(Screenshot.forReports(driver, Status.FAIL,"test"));
         report.flush();
-    }
+    }*/
 
 }
